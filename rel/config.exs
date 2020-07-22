@@ -32,14 +32,14 @@ environment :dev do
   set dev_mode: true
   set include_erts: false
   set cookie: :"NUWfurggm8n3Je$uHgv9>zw5q!3}85LX`x>1JUiTDOk$w(!WUMdw`507;h@[k6@X"
-  set vm_args: "rel/vm.args"
+  set vm_args: "rel/vm.args.eex"
 end
 
 environment :prod do
   set include_erts: true
   set include_src: false
   set cookie: :"Qo%k|*fa/Y|5p]LB9)!vJb./jRRh(k/hZWMcbHC7tuw5aqZ$F]{eVB.{5/JT)1aE"
-  set vm_args: "rel/vm.args"
+  set vm_args: "rel/vm.args.eex"
 end
 
 # You may define one or more releases in this file.
@@ -67,4 +67,3 @@ release :data_store do
     :runtime_tools
   ]
 end
-

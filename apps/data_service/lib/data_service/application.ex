@@ -12,8 +12,7 @@ defmodule DataService.Application do
     children = [
       # Starts a worker by calling: DataService.Worker.start_link(arg)
       # {DataService.Worker, arg}
-      {DataService.UidGenerator, []},
-      {DataService.InterfaceSup, []}
+      {DataService.UidGenerator, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
