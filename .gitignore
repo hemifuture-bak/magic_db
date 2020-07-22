@@ -9,3 +9,5 @@ erl_crash.dump
 /config/*.secret.exs
 mix.lock
 .elixir_ls
+.DS_Store
+*/.DS_Store
