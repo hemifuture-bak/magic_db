@@ -1,9 +1,9 @@
 defmodule DataService.UidGenerator do
   use GenServer
 
-  @time_bits 40
+  @time_bits 41
   @service_bits 10
-  @sequence_bits 14
+  @sequence_bits 12
 
   ## API
 
@@ -43,7 +43,7 @@ defmodule DataService.UidGenerator do
     sequence = get_sequence(timestamp, last_time, last_sequence)
 
     uid =
-      <<(<<timestamp::@time_bits>>)::bitstring, <<service_id::@service_bits>>::bitstring,
+      <<0::1, (<<timestamp::@time_bits>>)::bitstring, <<service_id::@service_bits>>::bitstring,
         <<sequence::@sequence_bits>>::bitstring>>
 
     {:reply, uid, %{state | last_time: timestamp, last_sequence: sequence}}
