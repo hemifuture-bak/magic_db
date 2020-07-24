@@ -26,6 +26,6 @@ defmodule DataService.Application do
     :pong = Node.ping(contact_node)
     DataInit.initialize(contact_node, :service)
     result = :rpc.call(contact_node, DataContact.ContactManager, :register, [node(), :service])
-    IO.inspect(result)
+    IO.puts(result)
   end
 end

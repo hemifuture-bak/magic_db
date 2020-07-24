@@ -18,7 +18,8 @@ defmodule DataService.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:lager, :logger, :amqp],
+      applications: [],
+      extra_applications: [:lager, :runtime_tools, :observer],
       mod: {DataService.Application, []}
     ]
   end

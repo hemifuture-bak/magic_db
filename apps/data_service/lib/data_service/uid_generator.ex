@@ -54,8 +54,9 @@ defmodule DataService.UidGenerator do
     timestamp = now_time - last_time
 
     if timestamp > 0 do
-      timestamp
+      now_time - base_time
     else
+      # 时钟回拨
       get_timestamp(last_time, base_time)
     end
   end

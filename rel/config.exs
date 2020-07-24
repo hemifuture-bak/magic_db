@@ -40,6 +40,9 @@ environment :prod do
   set include_src: false
   set cookie: :"Qo%k|*fa/Y|5p]LB9)!vJb./jRRh(k/hZWMcbHC7tuw5aqZ$F]{eVB.{5/JT)1aE"
   set vm_args: "rel/vm.args.eex"
+  set config_providers: [
+    {Distillery.Releases.Config.Providers.Elixir, ["${RELEASE_ROOT_DIR}/etc/config.exs"]}
+  ]
 end
 
 # You may define one or more releases in this file.
@@ -49,21 +52,21 @@ end
 
 release :data_contact do
   set version: current_version(:data_contact)
-  set applications: [
-    :runtime_tools
+  set overlays: [
+    {:copy, "apps/data_contact/rel/config/config.exs", "etc/config.exs"}
   ]
 end
 
 release :data_service do
   set version: current_version(:data_service)
-  set applications: [
-    :runtime_tools
+  set overlays: [
+    {:copy, "apps/data_service/config/release.exs", "etc/config.exs"}
   ]
 end
 
 release :data_store do
   set version: current_version(:data_store)
-  set applications: [
-    :runtime_tools
+  set overlays: [
+    {:copy, "apps/data_store/rel/config/config.exs", "etc/config.exs"}
   ]
 end
