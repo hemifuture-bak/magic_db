@@ -11,3 +11,7 @@ mix.lock
 .elixir_ls
 .DS_Store
 */.DS_Store
+
+# IntelliJ IDEA
+.idea
+*.iml
