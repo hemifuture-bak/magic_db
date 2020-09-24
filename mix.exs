@@ -1,4 +1,4 @@
-defmodule MagicDB.MixProject do
+defmodule MnesiaDemo.MixProject do
   use Mix.Project
 
   def project do
@@ -16,6 +16,6 @@ defmodule MagicDB.MixProject do
   #
   # Run "mix help deps" for examples and options.
   defp deps do
-    [{:distillery, "~> 2.1"}]
+    []
   end
 end

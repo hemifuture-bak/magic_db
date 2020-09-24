@@ -1,2 +1,4 @@
-# magic_db
-Personal proof-of-concept database repo.
+# MnesiaDemo
+
+**TODO: Add description**
+
