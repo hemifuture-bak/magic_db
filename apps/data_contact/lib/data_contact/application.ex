@@ -9,7 +9,7 @@ defmodule DataContact.Application do
     children = [
       # Starts a worker by calling: DataContact.Worker.start_link(arg)
       # {DataContact.Worker, arg}
-      {DataContact.ContactManager, []}
+      {DataContact.ContactManager, name: DataContact.ContactManager}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
